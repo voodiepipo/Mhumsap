@@ -91,5 +91,28 @@
         // window.location.href = "product-list.html";
       }
     </script>
+    <div class="delete-popup-overlay" id="deletePopup">
+  <div class="delete-popup">
+    <button
+      class="popup-close"
+      type="button"
+      aria-label="Close"
+      onclick="closeDeletePopup()"
+    >
+      ×
+    </button>
+
+    <p class="delete-popup-text">Do you want to discard?</p>
+
+    <div class="delete-popup-actions">
+      <button class="popup-confirm" type="button" onclick="confirmDelete()">
+        confirm
+      </button>
+      <button class="popup-cancel" type="button" onclick="closeDeletePopup()">
+        cancel
+      </button>
+    </div>
+  </div>
+</div>
   </body>
 </html>
