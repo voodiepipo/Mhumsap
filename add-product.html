@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="add-product.css" />
+  </head>
+  <body>
+    <main class="ADD-PRODUCT">
+      <section class="add-layout">
+        <div class="image-panel">
+          <div class="food-image-wrapper placeholder-wrapper">
+            <img src="img/placeholder-upload.png" alt="Upload placeholder" class="placeholder-image" />
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="field-row name-row">
+            <span class="field-label">Name</span>
+            <input type="text" value="--" />
+          </div>
+
+          <div class="field-block">
+            <label>Category</label>
+            <div class="select-wrap">
+              <select>
+                <option selected>--</option>
+                <option>Japanese</option>
+                <option>Thai</option>
+                <option>Dessert</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-block price-block">
+            <label>Price</label>
+            <input type="text" value="-- THB" />
+          </div>
+
+          <div class="field-block">
+            <label>Description</label>
+            <textarea placeholder="Add description..."></textarea>
+          </div>
+
+          <div class="save-row">
+            <button class="save-btn">Save</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
