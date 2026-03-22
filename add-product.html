@@ -11,7 +11,11 @@
       <section class="add-layout">
         <div class="image-panel">
           <div class="food-image-wrapper placeholder-wrapper">
-            <img src="img/placeholder-upload.png" alt="Upload placeholder" class="placeholder-image" />
+            <img
+              src="img/placeholder-upload.png"
+              alt="Upload placeholder"
+              class="placeholder-image"
+            />
           </div>
         </div>
 
@@ -44,10 +48,51 @@
           </div>
 
           <div class="save-row">
-            <button class="save-btn">Save</button>
+            <button class="save-btn" type="button" onclick="openSavePopup()">Save</button>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Save Popup -->
+    <div class="save-popup-overlay" id="savePopup">
+      <div class="save-popup">
+        <button
+          class="popup-close"
+          type="button"
+          aria-label="Close"
+          onclick="closeSavePopup()"
+        >
+          ×
+        </button>
+
+        <p class="save-popup-text">Do you want to save change?</p>
+
+        <div class="save-popup-actions">
+          <button class="popup-confirm" type="button" onclick="confirmSave()">
+            confirm
+          </button>
+          <button class="popup-cancel" type="button" onclick="closeSavePopup()">
+            cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openSavePopup() {
+        document.getElementById("savePopup").classList.add("active");
+      }
+
+      function closeSavePopup() {
+        document.getElementById("savePopup").classList.remove("active");
+      }
+
+      function confirmSave() {
+        closeSavePopup();
+        alert("Saved successfully");
+        // window.location.href = "product-list.html";
+      }
+    </script>
   </body>
 </html>
