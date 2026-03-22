@@ -198,22 +198,7 @@ body {
   filter: brightness(0.98);
 }
 
-@media (max-width: 1200px) {
-  .ADD-PRODUCT {
-    padding: 50px 24px 30px;
-  }
-
-  .add-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .food-image-wrapper {
-    width: 100%;
-    max-width: 540px;
-    height: 520px;
-  }
-}
-
+/* save popup */
 .save-popup-overlay {
   position: fixed;
   inset: 0;
@@ -283,6 +268,22 @@ body {
   background: #f34444;
 }
 
+@media (max-width: 1200px) {
+  .ADD-PRODUCT {
+    padding: 50px 24px 30px;
+  }
+
+  .add-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .food-image-wrapper {
+    width: 100%;
+    max-width: 540px;
+    height: 520px;
+  }
+}
+
 @media (max-width: 768px) {
   .save-popup {
     width: 92vw;
@@ -314,4 +315,3 @@ body {
     font-size: 24px;
   }
 }
-
