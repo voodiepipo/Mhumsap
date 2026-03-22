@@ -1,0 +1,107 @@
+:root {
+  --mhumsap-food-feast-lovable-app-semantic-button-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-button-font-weight: 700;
+  --mhumsap-food-feast-lovable-app-semantic-button-font-size: 18px;
+  --mhumsap-food-feast-lovable-app-semantic-button-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-button-line-height: 28px;
+  --mhumsap-food-feast-lovable-app-semantic-button-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-font-weight: 700;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-font-size: 36px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-line-height: 40px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-1-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-font-weight: 700;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-font-size: 20px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-line-height: 28px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-2-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-font-weight: 600;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-font-size: 16px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-line-height: 24px;
+  --mhumsap-food-feast-lovable-app-semantic-heading-3-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-input-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-input-font-weight: 400;
+  --mhumsap-food-feast-lovable-app-semantic-input-font-size: 14px;
+  --mhumsap-food-feast-lovable-app-semantic-input-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-input-line-height: normal;
+  --mhumsap-food-feast-lovable-app-semantic-input-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-label-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-label-font-weight: 500;
+  --mhumsap-food-feast-lovable-app-semantic-label-font-size: 14px;
+  --mhumsap-food-feast-lovable-app-semantic-label-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-label-line-height: 20px;
+  --mhumsap-food-feast-lovable-app-semantic-label-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-link-font-family: "Roboto",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-link-font-weight: 400;
+  --mhumsap-food-feast-lovable-app-semantic-link-font-size: 12px;
+  --mhumsap-food-feast-lovable-app-semantic-link-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-link-line-height: 12px;
+  --mhumsap-food-feast-lovable-app-semantic-link-font-style: normal;
+  --mhumsap-food-feast-lovable-app-semantic-options-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-semantic-options-font-weight: 400;
+  --mhumsap-food-feast-lovable-app-semantic-options-font-size: 14px;
+  --mhumsap-food-feast-lovable-app-semantic-options-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-semantic-options-line-height: 16px;
+  --mhumsap-food-feast-lovable-app-semantic-options-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-medium-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-medium-font-weight: 500;
+  --mhumsap-food-feast-lovable-app-poppins-medium-font-size: 14px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-line-height: 20px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-font-weight: 500;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-font-size: 12px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-letter-spacing: 0.30000001192092896px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-line-height: 16px;
+  --mhumsap-food-feast-lovable-app-poppins-medium-upper-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-regular-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-regular-font-weight: 400;
+  --mhumsap-food-feast-lovable-app-poppins-regular-font-size: 14px;
+  --mhumsap-food-feast-lovable-app-poppins-regular-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-poppins-regular-line-height: 20px;
+  --mhumsap-food-feast-lovable-app-poppins-regular-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-font-weight: 600;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-font-size: 12px;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-line-height: 16px;
+  --mhumsap-food-feast-lovable-app-poppins-semibold-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-bold-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-bold-font-weight: 700;
+  --mhumsap-food-feast-lovable-app-poppins-bold-font-size: 16px;
+  --mhumsap-food-feast-lovable-app-poppins-bold-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-poppins-bold-line-height: 24px;
+  --mhumsap-food-feast-lovable-app-poppins-bold-font-style: normal;
+  --mhumsap-food-feast-lovable-app-poppins-black-font-family: "Poppins",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-poppins-black-font-weight: 900;
+  --mhumsap-food-feast-lovable-app-poppins-black-font-size: 24px;
+  --mhumsap-food-feast-lovable-app-poppins-black-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-poppins-black-line-height: 32px;
+  --mhumsap-food-feast-lovable-app-poppins-black-font-style: normal;
+  --mhumsap-food-feast-lovable-app-roboto-regular-font-family: "Roboto",
+    Helvetica;
+  --mhumsap-food-feast-lovable-app-roboto-regular-font-weight: 400;
+  --mhumsap-food-feast-lovable-app-roboto-regular-font-size: 12px;
+  --mhumsap-food-feast-lovable-app-roboto-regular-letter-spacing: 0px;
+  --mhumsap-food-feast-lovable-app-roboto-regular-line-height: 12px;
+  --mhumsap-food-feast-lovable-app-roboto-regular-font-style: normal;
+}
