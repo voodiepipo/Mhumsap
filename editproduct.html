@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="add-product.css" />
+  </head>
+  <body>
+    <main class="ADD-PRODUCT">
+      <section class="add-layout">
+        <div class="image-panel">
+          <div class="food-image-wrapper">
+            <img src="img/gyudon.png" alt="Gyudon" class="food-image" />
+            <button class="upload-btn" aria-label="Upload image">
+              <img src="img/image-upload.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="field-row name-row">
+            <span class="field-label">Name</span>
+            <input type="text" value="Gyudon" />
+          </div>
+
+          <div class="field-block">
+            <label>Category</label>
+            <div class="select-wrap">
+              <select>
+                <option selected>Japanese</option>
+                <option>Thai</option>
+                <option>Dessert</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-block price-block">
+            <label>Price</label>
+            <input type="text" value="99 THB" />
+          </div>
+
+          <div class="field-block">
+            <label>Description</label>
+            <textarea>A premium Wagyu beef rice bowl featuring thinly sliced Wagyu stir-fried in savory soy sauce, placed on warm Japanese rice.</textarea>
+          </div>
+
+          <div class="save-row">
+            <button class="save-btn" type="button" onclick="openSavePopup()">Save</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="save-popup-overlay" id="savePopup">
+      <div class="save-popup">
+        <button
+          class="popup-close"
+          type="button"
+          aria-label="Close"
+          onclick="closeSavePopup()"
+        >
+          ×
+        </button>
+
+        <p class="save-popup-text">Do you want to save change?</p>
+
+        <div class="save-popup-actions">
+          <button class="popup-confirm" type="button" onclick="confirmSave()">
+            confirm
+          </button>
+          <button class="popup-cancel" type="button" onclick="closeSavePopup()">
+            cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openSavePopup() {
+        document.getElementById("savePopup").classList.add("active");
+      }
+
+      function closeSavePopup() {
+        document.getElementById("savePopup").classList.remove("active");
+      }
+
+      function confirmSave() {
+        closeSavePopup();
+        alert("Saved successfully");
+        // window.location.href = "product-list.html";
+      }
+    </script>
+  </body>
+</html>
