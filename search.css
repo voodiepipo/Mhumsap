@@ -109,6 +109,22 @@
     font-weight: 700;
 }
 
+/* Removes default blue color and underlines from the link */
+.card-link {
+    text-decoration: none;
+    color: inherit; /* Takes the color from your existing .food and .price classes */
+    display: block; /* Ensures the whole card area is clickable */
+    width: 100%;
+    height: 100%;
+}
+
+/* Optional: Add a subtle hover effect so users know it's clickable */
+.food-card:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+    transition: transform 0.2s ease;
+    transform: scale(1.02);
+}
 .country {
     font-size: 10px;
     text-transform: uppercase;
