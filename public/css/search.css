@@ -1,0 +1,238 @@
+/* ==========================================================
+   search.css — Search Page
+   BUG FIXED: Removed "* { background-color }" which was
+   overriding every element on the page.
+   ========================================================== */
+
+/* Page wrapper */
+.search-page-body {
+  background: var(--color-bg);
+}
+
+.search-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* ---- Search bar ---- */
+.search-bar-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: 0 4px 20px var(--color-shadow);
+  margin-bottom: var(--space-xl);
+}
+
+.search-bar-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.search-input-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.search-input-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.search-main-input {
+  width: 100%;
+  height: 50px;
+  background: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-md) 0 44px;
+  font-size: 15px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-main-input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(74,57,51,0.10);
+}
+
+.search-main-input::placeholder { color: var(--color-text-muted); }
+
+/* Filter row */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.filter-select {
+  height: 42px;
+  background: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-md);
+  font-size: 13px;
+  color: var(--color-text);
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.filter-select:focus {
+  border-color: var(--color-secondary);
+}
+
+.btn-search {
+  height: 42px;
+  padding: 0 var(--space-lg);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.btn-search:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ---- Results section ---- */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.results-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.results-count {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Food grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Card */
+.food-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.14);
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.food-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--color-bg);
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover img { transform: scale(1.04); }
+
+.card-body {
+  padding: var(--space-md);
+}
+
+.country {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.food-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* Loading / empty */
+.search-loading,
+.search-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-2xl) 0;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .search-wrapper { padding: 0 var(--space-md); }
+  .search-bar-section { padding: var(--space-lg); }
+  .search-input-row { flex-direction: column; gap: var(--space-sm); }
+  .filter-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 500px) {
+  .food-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+}

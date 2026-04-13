@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Add a new product to the menu">
+  <title>Mhumsap – Add Product</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/popup.css">
+  <link rel="stylesheet" href="../css/form-product.css">
+  <link rel="stylesheet" href="../css/add-product.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html" class="active">Products</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="page-container">
+
+      <!-- Page heading -->
+      <div class="page-header-row">
+        <a href="products.html" class="back-link">← Back to Products</a>
+        <h1 class="page-title">Add New Product</h1>
+        <p class="page-subtitle">Fill in the details below to add a new item to the menu</p>
+      </div>
+
+      <!-- Form card -->
+      <div class="form-card">
+        <form id="addProductForm" novalidate>
+          <div class="form-layout">
+
+            <!-- Left: image preview -->
+            <div class="form-image-panel">
+              <div class="food-image-wrapper" id="addImageWrapper">
+                <img
+                  id="addImagePreview"
+                  src="../images/placeholder-upload.png"
+                  alt="Image preview"
+                  class="food-image placeholder-img"
+                >
+              </div>
+              <p class="img-hint">Paste an image URL in the field below<br>to see a live preview here</p>
+            </div>
+
+            <!-- Right: fields -->
+            <div class="form-fields-panel">
+
+              <div class="field-row name-row">
+                <label class="field-label" for="addName">Name</label>
+                <input
+                  type="text"
+                  id="addName"
+                  name="name"
+                  placeholder="e.g. Gyudon"
+                  required
+                  autocomplete="off"
+                >
+              </div>
+
+              <div class="field-block">
+                <label for="addCategory">Category</label>
+                <div class="select-wrap">
+                  <select id="addCategory" name="category">
+                    <option value="" disabled selected>— Select category —</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-block price-block">
+                <label for="addPrice">Price (THB)</label>
+                <input
+                  type="number"
+                  id="addPrice"
+                  name="price"
+                  min="0"
+                  step="0.01"
+                  placeholder="e.g. 99.00"
+                  required
+                >
+              </div>
+
+              <div class="form-row-two">
+                <div class="field-block">
+                  <label for="addStock">Stock</label>
+                  <input
+                    type="number"
+                    id="addStock"
+                    name="stock"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    value="0"
+                  >
+                </div>
+                <div class="field-block">
+                  <label for="addRating">Rating (0–5)</label>
+                  <input
+                    type="number"
+                    id="addRating"
+                    name="rating"
+                    min="0"
+                    max="5"
+                    step="0.1"
+                    placeholder="e.g. 4.5"
+                  >
+                </div>
+              </div>
+
+              <div class="field-block">
+                <label for="addImageUrl">Image URL</label>
+                <input
+                  type="url"
+                  id="addImageUrl"
+                  name="image_url"
+                  placeholder="https://example.com/image.jpg"
+                >
+              </div>
+
+              <div class="field-block">
+                <label for="addDescription">Description</label>
+                <textarea
+                  id="addDescription"
+                  name="description"
+                  rows="4"
+                  placeholder="Write a short description of this product…"
+                ></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-submit" id="addSubmitBtn">Save Product</button>
+                <a href="products.html" class="btn-cancel-form">Cancel</a>
+              </div>
+
+            </div><!-- /form-fields-panel -->
+          </div><!-- /form-layout -->
+        </form>
+      </div><!-- /form-card -->
+    </div>
+  </main>
+
+  <!-- SAVE CONFIRMATION POPUP -->
+  <div class="popup-overlay" id="savePopup" role="dialog" aria-modal="true" aria-labelledby="savePopupTitle">
+    <div class="popup-box">
+      <button
+        class="popup-close-btn"
+        id="closeSavePopup"
+        aria-label="Close"
+      >&times;</button>
+      <div class="popup-icon save-icon" aria-hidden="true">✓</div>
+      <h2 class="popup-title" id="savePopupTitle">Save Product?</h2>
+      <p class="popup-subtitle">Are you sure you want to add this product to the menu?</p>
+      <div class="popup-actions">
+        <button class="btn-confirm" id="confirmSaveBtn">Yes, Save</button>
+        <button class="btn-cancel"  id="cancelSaveBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/add-product.js"></script>
+</body>
+</html>

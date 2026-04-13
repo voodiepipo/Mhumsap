@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Search and filter our food menu">
+  <title>Mhumsap – Search</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/search.css">
+</head>
+<body class="search-page-body">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html" class="active">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="search-wrapper">
+
+      <!-- Search bar + filters -->
+      <section class="search-bar-section" aria-label="Search filters">
+        <h1 class="search-bar-title">Search Menu</h1>
+
+        <div class="search-input-row">
+          <div class="search-input-wrap">
+            <img src="../images/icons/search.svg" alt="" class="search-input-icon" aria-hidden="true">
+            <input
+              type="search"
+              id="searchInput"
+              class="search-main-input"
+              placeholder="Search by name or description…"
+              aria-label="Search products"
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-label">Filter by:</span>
+
+          <select id="categoryFilter" class="filter-select" aria-label="Filter by category">
+            <option value="">All Categories</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Thai">Thai</option>
+            <option value="Italian">Italian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button type="button" id="searchBtn" class="btn-search">Search</button>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section aria-label="Search results">
+        <div class="results-header">
+          <h2 class="results-title">Results</h2>
+          <span class="results-count" id="resultsCount"></span>
+        </div>
+
+        <div class="food-grid" id="searchGrid" aria-live="polite">
+          <!-- Cards rendered by search.js -->
+
+          <div class="search-loading" id="searchLoading">
+            <div class="spinner"></div>
+            <span>Loading…</span>
+          </div>
+        </div>
+
+        <p class="search-empty" id="searchEmpty" style="display:none">
+          No products matched your search. Try a different keyword or category.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

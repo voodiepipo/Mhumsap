@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Product Detail">
+  <title>Mhumsap – Product Detail</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="detail-container" id="detailContainer">
+
+      <!-- Loading state (shown while fetching) -->
+      <div id="detailLoading" class="detail-loading" aria-live="polite">
+        <div class="spinner"></div>
+        <span>Loading product…</span>
+      </div>
+
+      <!-- Main content (shown after data loads) -->
+      <div id="detailContent" style="display:none">
+        <a href="javascript:history.back()" class="back-link" aria-label="Go back">← Back</a>
+
+        <article class="detail-card">
+          <!-- Left: image -->
+          <div class="detail-img-wrap">
+            <img
+              id="detailImg"
+              src=""
+              alt="Product image"
+              class="detail-img"
+              onerror="this.src='../images/placeholder-upload.png'"
+            >
+            <span class="detail-category-badge" id="detailCategory"></span>
+          </div>
+
+          <!-- Right: info -->
+          <div class="detail-info">
+            <div>
+              <h1 class="detail-name"  id="detailName"></h1>
+              <p  class="detail-id-label" id="detailId"></p>
+            </div>
+
+            <div>
+              <p class="detail-section-title">Description</p>
+              <p class="detail-description" id="detailDescription">No description available.</p>
+            </div>
+
+            <!-- Rating -->
+            <div class="detail-rating-wrap">
+              <p class="detail-section-title">Rating</p>
+              <div id="detailRating" class="detail-rating"></div>
+            </div>
+
+            <!-- Stock -->
+            <div id="detailStock" class="detail-stock-wrap"></div>
+
+            <div class="detail-price-box">
+              <span class="detail-price-label">Price</span>
+              <span class="detail-price-value" id="detailPrice"></span>
+            </div>
+
+            <button class="btn-order" id="orderBtn" type="button">Order Now!</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Error state -->
+      <div id="detailError" style="display:none" class="detail-error" role="alert">
+        <p>Product not found. <a href="home.html">Return to Home</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/product-detail.js"></script>
+</body>
+</html>

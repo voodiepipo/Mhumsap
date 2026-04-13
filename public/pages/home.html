@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Discover and order delicious food from our curated menu">
+  <title>Mhumsap – Home</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/home.css">
+</head>
+<body class="home-body">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html" class="active">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-logo-bar">
+      <img src="../images/MhumsapLogo.png" alt="Mhumsap Logo" class="hero-logo">
+    </div>
+    <div class="hero-banner">
+      <div class="banner-content">
+        <span class="banner-tag">Featured Today</span>
+        <h1 class="banner-title">Taste the Finest<br>Food in Town</h1>
+        <p class="banner-sub">Fresh ingredients, authentic flavors — from Japanese gyudon to classic Thai dishes, all in one place.</p>
+        <a href="search.html" class="banner-cta">Explore Menu →</a>
+      </div>
+      <div class="banner-img-wrap">
+        <img src="../images/gyudon.png" alt="Gyudon — featured dish" class="banner-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID SECTION -->
+  <section class="products-section" aria-label="Menu">
+    <div class="section-header">
+      <h2 class="section-title">Our Menu</h2>
+      <a href="search.html" class="view-all">View All →</a>
+    </div>
+
+    <div class="product-grid" id="productGrid" aria-live="polite">
+      <!-- Skeleton placeholders (removed by JS) -->
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+      <div class="skeleton-card" aria-hidden="true"></div>
+    </div>
+
+    <p class="empty-msg" id="emptyMsg" style="display:none">
+      No products available yet. Check back soon!
+    </p>
+  </section>
+
+  <script src="../js/home.js"></script>
+</body>
+</html>

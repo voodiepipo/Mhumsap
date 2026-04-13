@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Product Management (Admin)">
+  <title>Mhumsap – Product Management</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/popup.css">
+  <link rel="stylesheet" href="../css/form-product.css">
+  <link rel="stylesheet" href="../css/products.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html" class="active">Products</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-body">
+    <div class="page-container">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Product Management</h1>
+        <p class="page-subtitle">Add, edit, or remove products from the menu</p>
+      </div>
+
+      <!-- Top Actions: search + add button -->
+      <div class="top-actions">
+        <div class="search-bar-wrap">
+          <img src="../images/icons/search.svg" alt="" class="search-icon" aria-hidden="true">
+          <input
+            type="search"
+            id="searchInput"
+            class="search-bar-input"
+            placeholder="Search by name or category..."
+            aria-label="Search products"
+          >
+        </div>
+        <a href="add-product.html" class="btn-add-product" aria-label="Add new product">
+          <img src="../images/icons/add.svg" alt="">
+          <span>Add Product</span>
+        </a>
+      </div>
+
+      <!-- Product Table -->
+      <div class="table-wrap" role="region" aria-label="Product list">
+        <div class="table-loading" id="tableLoading" aria-live="polite">
+          <div class="spinner"></div>
+          <span>Loading products…</span>
+        </div>
+
+        <table class="product-table" id="productTable" style="display:none">
+          <thead>
+            <tr>
+              <th class="col-img"      scope="col">Photo</th>
+              <th class="col-name"     scope="col">Name</th>
+              <th class="col-category" scope="col">Category</th>
+              <th class="col-price"    scope="col">Price</th>
+              <th class="col-stock"    scope="col">Stock</th>
+              <th class="col-actions"  scope="col"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody">
+            <!-- Rows inserted by products.js -->
+          </tbody>
+        </table>
+
+        <div class="table-empty" id="tableEmpty" style="display:none">
+          <p>No products found. <a href="add-product.html">Add the first one →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================
+       EDIT PRODUCT MODAL
+       (This is the form that opens when clicking Edit in the table.
+        It replaces the old standalone editproduct.html.)
+       ======================================================== -->
+  <div class="popup-overlay" id="editModal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+    <div class="edit-modal-box">
+      <button class="popup-close-btn" id="closeEditModal" aria-label="Close edit modal">&times;</button>
+      <h2 class="edit-modal-title" id="editModalTitle">Edit Product</h2>
+
+      <form id="editProductForm" class="product-form" novalidate>
+        <input type="hidden" id="editProductId">
+
+        <div class="form-layout">
+          <!-- Left: image preview -->
+          <div class="form-image-panel">
+            <div class="food-image-wrapper" id="editImageWrapper">
+              <img
+                id="editImagePreview"
+                src="../images/placeholder-upload.png"
+                alt="Product preview"
+                class="food-image placeholder-img"
+              >
+            </div>
+            <p class="img-hint">Paste an image URL in the field below to preview</p>
+          </div>
+
+          <!-- Right: form fields -->
+          <div class="form-fields-panel">
+            <div class="field-row name-row">
+              <label class="field-label" for="editName">Name</label>
+              <input type="text" id="editName" name="name" placeholder="Product name" required>
+            </div>
+
+            <div class="field-block">
+              <label for="editCategory">Category</label>
+              <div class="select-wrap">
+                <select id="editCategory" name="category">
+                  <option value="Japanese">Japanese</option>
+                  <option value="Thai">Thai</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Dessert">Dessert</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-block price-block">
+              <label for="editPrice">Price (THB)</label>
+              <input type="number" id="editPrice" name="price" min="0" step="0.01" placeholder="0.00" required>
+            </div>
+
+            <div class="form-row-two">
+              <div class="field-block">
+                <label for="editStock">Stock</label>
+                <input type="number" id="editStock" name="stock" min="0" step="1" placeholder="0" value="0">
+              </div>
+              <div class="field-block">
+                <label for="editRating">Rating (0–5)</label>
+                <input type="number" id="editRating" name="rating" min="0" max="5" step="0.1" placeholder="e.g. 4.5">
+              </div>
+            </div>
+
+            <div class="field-block">
+              <label for="editImageUrl">Image URL</label>
+              <input type="url" id="editImageUrl" name="image_url" placeholder="https://example.com/image.jpg">
+            </div>
+
+            <div class="field-block">
+              <label for="editDescription">Description</label>
+              <textarea id="editDescription" name="description" rows="4" placeholder="Describe the product…"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit" id="editSubmitBtn">Save Changes</button>
+              <button type="button" class="btn-cancel-form" id="cancelEditBtn">Cancel</button>
+            </div>
+          </div><!-- /form-fields-panel -->
+        </div><!-- /form-layout -->
+      </form>
+    </div><!-- /edit-modal-box -->
+  </div><!-- /editModal -->
+
+  <!-- ========================================================
+       DELETE CONFIRMATION POPUP
+       ======================================================== -->
+  <div class="popup-overlay" id="deletePopup" role="dialog" aria-modal="true" aria-labelledby="deletePopupTitle">
+    <div class="popup-box">
+      <button class="popup-close-btn" id="closeDeletePopup" aria-label="Close">&times;</button>
+      <div class="popup-icon delete-icon" aria-hidden="true">🗑️</div>
+      <h2 class="popup-title" id="deletePopupTitle">Delete Product?</h2>
+      <p class="popup-subtitle">This action cannot be undone. The product will be permanently removed from the database.</p>
+      <div class="popup-actions">
+        <button class="btn-confirm" id="confirmDeleteBtn">Yes, Delete</button>
+        <button class="btn-cancel"  id="cancelDeleteBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/products.js"></script>
+</body>
+</html>

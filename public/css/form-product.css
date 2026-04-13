@@ -1,0 +1,258 @@
+/* ==========================================================
+   form-product.css — Shared Product Form Layout
+   Used by: add-product.html  AND  edit modal in products.html
+   ========================================================== */
+
+/* Two-column layout: image left, fields right */
+.form-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* ---- Left panel: image preview ---- */
+.form-image-panel { }
+
+.food-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  transition: border-color var(--transition);
+}
+
+.food-image-wrapper:hover {
+  border-color: var(--color-secondary);
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.food-image.placeholder-img {
+  object-fit: contain;
+  padding: var(--space-xl);
+  opacity: 0.5;
+}
+
+.img-hint {
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  line-height: 1.4;
+}
+
+/* ---- Right panel: form fields ---- */
+.form-fields-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Name field — horizontal label + input in one bar */
+.field-row.name-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  height: 58px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  padding: 0 var(--space-md);
+  gap: var(--space-md);
+}
+
+.field-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.name-row input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--color-text);
+  width: 100%;
+}
+
+/* Generic field block */
+.field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-block label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Select dropdown */
+.select-wrap {
+  position: relative;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  overflow: hidden;
+}
+
+.select-wrap select {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 0 44px 0 var(--space-md);
+  color: var(--color-text);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.select-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 9px;
+  height: 9px;
+  border-left: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: translateY(-65%) rotate(-45deg);
+  pointer-events: none;
+}
+
+/* Shared text/number/url inputs */
+.price-block input,
+.field-block input[type="text"],
+.field-block input[type="url"],
+.field-block input[type="number"] {
+  height: 50px;
+  border: none;
+  outline: none;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  padding: 0 var(--space-md);
+  font-size: 14px;
+  color: var(--color-text);
+  transition: box-shadow var(--transition);
+  width: 100%;
+}
+
+.price-block input:focus,
+.field-block input:focus {
+  box-shadow: 0 0 0 2px var(--color-secondary), 0 2px 8px var(--color-shadow);
+}
+
+/* Textarea */
+.field-block textarea {
+  width: 100%;
+  min-height: 110px;
+  border: none;
+  outline: none;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  padding: var(--space-md);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text);
+  resize: vertical;
+  transition: box-shadow var(--transition);
+}
+
+.field-block textarea:focus {
+  box-shadow: 0 0 0 2px var(--color-secondary), 0 2px 8px var(--color-shadow);
+}
+
+.field-block textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Form action buttons row */
+.form-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  height: 50px;
+  padding: 0 var(--space-xl);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-submit:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cancel-form {
+  height: 50px;
+  padding: 0 var(--space-lg);
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn-cancel-form:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+/* Two equal columns side by side (stock + rating) */
+.form-row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 700px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .food-image-wrapper {
+    aspect-ratio: 16/9;
+    max-height: 260px;
+  }
+}

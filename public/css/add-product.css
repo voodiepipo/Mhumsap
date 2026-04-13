@@ -1,0 +1,41 @@
+/* ==========================================================
+   add-product.css — Page-Specific Overrides for Add Product
+   (form-product.css handles the shared form layout)
+   ========================================================== */
+
+.page-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.page-header-row {
+  margin-bottom: var(--space-xl);
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* White card wrapping the form */
+.form-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 6px 28px var(--color-shadow);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .page-container { padding: 0 var(--space-md); }
+  .form-card      { padding: var(--space-md); }
+  .page-title     { font-size: 20px; }
+}
