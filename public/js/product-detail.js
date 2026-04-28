@@ -1,31 +1,4 @@
-/* ==========================================================
-   product-detail.js — Product Detail Page
-   Reads ?id= from URL, fetches from API, populates DOM
-   Shows: image, category, name, description, price,
-          rating stars, stock badge, order button
-   ========================================================== */
-
 const API_BASE = 'http://localhost:3000/api';
-
-/* ----------------------------------------------------------
-   UTILITY: render filled + empty stars (e.g. ★★★★☆)
-   ---------------------------------------------------------- */
-function renderStars(rating) {
-  if (rating === null || rating === undefined) return '<span class="no-rating">No rating yet</span>';
-  const r     = parseFloat(rating);
-  const full  = Math.floor(r);
-  const half  = r - full >= 0.5 ? 1 : 0;
-  const empty = 5 - full - half;
-
-  return (
-    '<span class="rating-stars" aria-label="Rating: ' + r.toFixed(1) + ' out of 5">' +
-    '<span class="star filled">★</span>'.repeat(full) +
-    (half ? '<span class="star half">★</span>' : '') +
-    '<span class="star empty">☆</span>'.repeat(empty) +
-    '</span>' +
-    `<span class="rating-value">${r.toFixed(1)} / 5</span>`
-  );
-}
 
 /* ----------------------------------------------------------
    UTILITY: stock availability
@@ -83,10 +56,7 @@ async function loadDetail() {
     document.getElementById('detailPrice').textContent      =
       `${Number(p.price).toFixed(2)} THB`;
 
-    // Rating stars
-    document.getElementById('detailRating').innerHTML = renderStars(p.rating);
-
-    // Stock badge
+    // Stock badge 
     document.getElementById('detailStock').innerHTML  = renderStock(p.stock);
 
     // Show content

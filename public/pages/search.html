@@ -49,9 +49,10 @@
         </div>
 
         <div class="filter-row">
-          <span class="filter-label">Filter by:</span>
+          <span class="filter-label">Criteria:</span>
 
           <select id="categoryFilter" class="filter-select" aria-label="Filter by category">
+            <option value=" - "></option>
             <option value="">All Categories</option>
             <option value="Japanese">Japanese</option>
             <option value="Thai">Thai</option>
@@ -59,6 +60,21 @@
             <option value="Chinese">Chinese</option>
             <option value="Dessert">Dessert</option>
             <option value="Other">Other</option>
+          </select>
+
+          <select id="stockFilter" class="filter-select" aria-label="Filter by stock status">
+            <option value=" - "></option>
+            <option value="">All Stock</option>
+            <option value="in_stock">In Stock</option>
+            <option value="out_of_stock">Out of Stock</option>
+          </select>
+
+          <select id="priceFilter" class="filter-select" aria-label="Filter by price range">
+            <option value=" - "></option>
+            <option value="">All Prices</option>
+            <option value="under_100">Under 100 THB</option>
+            <option value="100_to_200">100 - 200 THB</option>
+            <option value="over_200">Over 200 THB</option>
           </select>
 
           <button type="button" id="searchBtn" class="btn-search">Search</button>
@@ -73,12 +89,17 @@
         </div>
 
         <div class="food-grid" id="searchGrid" aria-live="polite">
-          <!-- Cards rendered by search.js -->
+          
+          <div id="initialMessage" style="text-align: center; grid-column: 1 / -1; padding: 4rem 1rem;">
+            <h2 style="color: #8b0000; margin-bottom: 10px;">🍽️ Ready to order?</h2>
+            <p style="color: #666; font-size: 1.1rem;">Please select your criteria and click <b>Search</b> to find your food.</p>
+          </div>
 
-          <div class="search-loading" id="searchLoading">
+          <div class="search-loading" id="searchLoading" style="display:none">
             <div class="spinner"></div>
             <span>Loading…</span>
           </div>
+          
         </div>
 
         <p class="search-empty" id="searchEmpty" style="display:none">

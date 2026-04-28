@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mhumsap – Create a new account">
+  <title>Mhumsap – Sign Up</title>
+  <link rel="stylesheet" href="../css/globals.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-body">
+
+  <header class="navbar">
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <img src="../images/logo.png" alt="Mhumsap" class="nav-logo">
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="search.html">Search</a>
+      <a href="team.html">Team</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <main class="login-main">
+
+    <img src="../images/MhumsapLogo.png" alt="Mhumsap" class="hero-logo">
+
+    <div class="login-card">
+
+      <form id="signupFormContainer">
+        <h1 class="login-card-title">Create an Account</h1>
+
+        <div class="login-btn input-container">
+          <input type="text" id="fNameInput" placeholder="first name" class="inside-input" autocomplete="off" required>
+        </div>
+
+        <div class="login-btn input-container">
+          <input type="text" id="lNameInput" placeholder="last name" class="inside-input" autocomplete="off" required>
+        </div>
+
+        <div class="login-btn input-container">
+          <input type="email" id="signupEmailInput" placeholder="email address" class="inside-input" autocomplete="off" required>
+        </div>
+
+        <div class="login-btn input-container">
+          <img src="../images/icons/User.svg" alt="Username">
+          <input type="text" id="signupUsernameInput" placeholder="username" class="inside-input" autocomplete="off" required>
+        </div>
+
+        <div class="login-btn input-container">
+          <img src="../images/icons/Lock.svg" alt="Lock">
+          <input type="password" id="signupPasswordInput" placeholder="password" class="inside-input" required>
+        </div>
+
+        <button class="login-btn submit-btn" type="submit" id="submitSignupBtn">
+          Sign Up
+        </button>
+
+        <div class="login-divider">or</div>
+
+        <a href="login.html" class="guest-link">BACK TO LOGIN</a>
+      </form>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/signup.js"></script>
+
+</body>
+</html>

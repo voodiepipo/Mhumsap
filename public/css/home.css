@@ -32,13 +32,11 @@
   justify-content: center;
   margin-bottom: var(--space-xl);
 }
-
 .hero-logo {
-  height: 72px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  width: min(600px, 90%);
+  height: auto;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.7));
 }
-
 .hero-banner {
   display: flex;
   align-items: center;

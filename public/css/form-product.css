@@ -1,8 +1,3 @@
-/* ==========================================================
-   form-product.css — Shared Product Form Layout
-   Used by: add-product.html  AND  edit modal in products.html
-   ========================================================== */
-
 /* Two-column layout: image left, fields right */
 .form-layout {
   display: grid;

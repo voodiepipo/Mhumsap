@@ -1,17 +1,16 @@
-/* ==========================================================
-   server/controllers/productController.js
-   Updated: added stock and rating fields
-   ========================================================== */
-
 const ProductModel = require('../models/productModel');
 
 const ProductController = {
 
-  /* GET /api/products */
+  /* GET */
   getAll: async (req, res) => {
     try {
-      const { search = '', category = '' } = req.query;
-      const products = await ProductModel.getAll({ search, category });
+      //stock  price filter
+      const { search = '', category = '', stock = '', price = '' } = req.query;
+      
+      //sent data to Model create sql cmd
+      const products = await ProductModel.getAll({ search, category, stock, price });
+      
       res.json(products);
     } catch (err) {
       console.error('getAll error:', err.message);
@@ -19,7 +18,7 @@ const ProductController = {
     }
   },
 
-  /* GET /api/products/:id */
+  /* GET */
   getById: async (req, res) => {
     try {
       const id = parseInt(req.params.id);
@@ -35,7 +34,7 @@ const ProductController = {
     }
   },
 
-  /* POST /api/products */
+  /* POST */
   create: async (req, res) => {
     try {
       const { name, price, category, image_url, description, stock, rating } = req.body;
@@ -63,7 +62,7 @@ const ProductController = {
     }
   },
 
-  /* PUT /api/products/:id */
+  /* PUT */
   update: async (req, res) => {
     try {
       const id = parseInt(req.params.id);
@@ -96,7 +95,7 @@ const ProductController = {
     }
   },
 
-  /* DELETE /api/products/:id */
+  /* DELETE */
   delete: async (req, res) => {
     try {
       const id = parseInt(req.params.id);

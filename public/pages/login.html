@@ -11,7 +11,6 @@
 </head>
 <body class="login-body">
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <button class="nav-hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -26,36 +25,54 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
   <main class="login-main">
 
-    <!-- Hero logo -->
     <img src="../images/MhumsapLogo.png" alt="Mhumsap" class="hero-logo">
 
-    <!-- Login card -->
     <div class="login-card">
-      <h1 class="login-card-title">Sign in to Mhumsap</h1>
 
-      <!-- Member login button -->
-      <button class="login-btn" type="button" id="memberLoginBtn" aria-label="Login as Member">
-        <img src="../images/icons/User.svg" alt="">
-        <span>Member Account</span>
-      </button>
+      <form id="loginFormContainer">
+        <h1 class="login-card-title">Sign in to Mhumsap</h1>
 
-      <!-- Admin login button -->
-      <button class="login-btn" type="button" id="adminLoginBtn" aria-label="Login as Administrator">
-        <img src="../images/icons/Lock.svg" alt="">
-        <span>Administrator Account</span>
-      </button>
+        <div class="login-btn input-container">
+          <img src="../images/icons/User.svg" alt="Email">
+          <input type="text" id="emailInput" placeholder="username" class="inside-input" autocomplete="off" required>
+        </div>
 
-      <!-- Divider -->
-      <div class="login-divider">or</div>
+        <div class="login-btn input-container">
+          <img src="../images/icons/Lock.svg" alt="Lock">
+          <input type="password" id="passwordInput" placeholder="password" class="inside-input" required>
+        </div>
 
-      <!-- Guest link -->
-      <a href="home.html" class="guest-link">Continue as Guest</a>
+        <button class="login-btn submit-btn" type="submit" id="submitLoginBtn">
+          Login
+        </button>
+
+        <div class="login-divider">or</div>
+
+        <a href="signup.html" class="guest-link">SIGN UP</a>
+      </form>
+
+      <div id="loggedInContainer" style="display: none; text-align: center; padding: 10px 0;">
+        
+        <div style="width: 80px; height: 80px; background-color: #f9f9f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; border: 1px solid #eaeaea; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+          <img src="../images/icons/User.svg" alt="Profile" style="width: 40px; opacity: 0.6;">
+        </div>
+
+        <h1 id="greetingText" class="login-card-title" style="margin-bottom: 5px; font-size: 26px;">Hi, User</h1>
+        
+        <p style="color: #888; font-size: 14px; margin-bottom: 30px;">You are logged in to your account.</p>
+        
+        <button class="login-btn submit-btn" type="button" id="logoutBtn" style="width: 100%;">
+          Logout
+        </button>
+
+      </div>
+
     </div>
-
   </main>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script src="../js/login.js"></script>
 </body>
 </html>

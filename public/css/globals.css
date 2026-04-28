@@ -1,14 +1,5 @@
-/* ==========================================================
-   globals.css — Mhumsap Shared Design System
-   Import this FIRST on every page.
-   ========================================================== */
-
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Inter:wght@400;500;600&display=swap');
 
-/* ==========================================================
-   CSS VARIABLES (Design Tokens)
-   ========================================================== */
 :root {
   /* --- Brand Colors --- */
   --color-primary:      #A90000;
@@ -97,10 +88,6 @@ ul, ol { list-style: none; }
 input, textarea, select {
   font-family: var(--font-main);
 }
-
-/* ==========================================================
-   UTILITY CLASSES
-   ========================================================== */
 
 /* Screen-reader only */
 .visually-hidden {

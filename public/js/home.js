@@ -1,7 +1,3 @@
-/* ==========================================================
-   home.js — Home Page: Load product cards from API
-   ========================================================== */
-
 const API_BASE = 'http://localhost:3000/api';
 
 async function loadProducts() {

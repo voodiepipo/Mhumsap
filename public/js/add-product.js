@@ -1,11 +1,3 @@
-/* ==========================================================
-   add-product.js — Add Product Page
-   Handles: live image preview, form validation,
-            save confirmation popup, POST to API
-   Fields:  name, category, price, stock, rating,
-            image_url, description
-   ========================================================== */
-
 const API_BASE = 'http://localhost:3000/api';
 
 let pendingFormData = null;

@@ -1,19 +1,10 @@
-/* ==========================================================
-   search.js — Search & Filter Page
-   Calls GET /api/products?search=&category=
-   Updates the food grid in real-time
-   ========================================================== */
-
 const API_BASE = 'http://localhost:3000/api';
 
-let debounceTimer = null;
-
-/* ----------------------------------------------------------
-   Fetch and render search results
-   ---------------------------------------------------------- */
 async function searchProducts() {
   const q        = document.getElementById('searchInput').value.trim();
   const category = document.getElementById('categoryFilter').value;
+  const stock    = document.getElementById('stockFilter').value;
+  const price    = document.getElementById('priceFilter').value;
 
   const grid    = document.getElementById('searchGrid');
   const empty   = document.getElementById('searchEmpty');
@@ -28,10 +19,13 @@ async function searchProducts() {
   count.textContent     = '';
 
   try {
-    // Build query string
     const params = new URLSearchParams();
+    
+    // ดึงค่ามาประกอบเป็น URL (ถ้าช่องไหนเป็นค่าว่าง "" จะไม่ถูกส่งไป)
     if (q)        params.set('search',   q);
     if (category) params.set('category', category);
+    if (stock)    params.set('stock',    stock);
+    if (price)    params.set('price',    price);
 
     const url = `${API_BASE}/products${params.toString() ? '?' + params.toString() : ''}`;
     const res = await fetch(url);
@@ -50,8 +44,8 @@ async function searchProducts() {
       empty.style.display = 'block';
       return;
     }
-
-    // Render cards
+    
+    // Render Products
     products.forEach(p => {
       const card = document.createElement('div');
       card.className = 'food-card';
@@ -88,31 +82,16 @@ async function searchProducts() {
   }
 }
 
-/* ----------------------------------------------------------
-   Event listeners
-   ---------------------------------------------------------- */
+// ==========================================
+// Event Listeners 
+// ==========================================
 
-// Debounced live search as user types
-document.getElementById('searchInput').addEventListener('input', () => {
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(searchProducts, 350);
-});
-
-// Instant filter when category changes
-document.getElementById('categoryFilter').addEventListener('change', searchProducts);
-
-// Manual search button
+// 1. ค้นหาเมื่อกดปุ่ม Search เท่านั้น
 document.getElementById('searchBtn').addEventListener('click', searchProducts);
 
-// Submit on Enter key inside search input
 document.getElementById('searchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') {
-    clearTimeout(debounceTimer);
+    e.preventDefault(); 
     searchProducts();
   }
 });
-
-/* ----------------------------------------------------------
-   Initialize — load all products on page open
-   ---------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', searchProducts);

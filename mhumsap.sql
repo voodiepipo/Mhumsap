@@ -6,13 +6,11 @@
 --                categories, products, members, team_members
 -- ==========================================================
 
-DROP DATABASE IF EXISTS webd;
-CREATE DATABASE IF NOT EXISTS webd
+CREATE DATABASE mhumsap_db
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE webd;
-
+USE mhumsap_db;
 -- ==========================================================
 -- ADMIN TABLES
 -- ==========================================================
@@ -35,17 +33,6 @@ CREATE TABLE admin_login (
     last_login    DATETIME,
     FOREIGN KEY (admin_id)
         REFERENCES administrators(admin_id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
-);
-
-CREATE TABLE login_logs (
-    log_id     INT         PRIMARY KEY AUTO_INCREMENT,
-    login_id   INT         NOT NULL,
-    login_time DATETIME    DEFAULT CURRENT_TIMESTAMP,
-    ip_address VARCHAR(50),
-    FOREIGN KEY (login_id)
-        REFERENCES admin_login(login_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
@@ -90,7 +77,6 @@ CREATE TABLE products (
         ON UPDATE CASCADE
 );
 
--- Seed 5 sample products (category_id resolved by subquery)
 INSERT INTO products (product_name, price, category_id, stock, rating, image_url, description)
 SELECT 'Gyudon', 99.00, category_id, 20, 4.8,
     'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&auto=format&fit=crop',
@@ -117,33 +103,21 @@ SELECT 'Dim Sum Platter', 120.00, category_id, 10, 4.6,
     'Assorted steamed dumplings — har gow, siu mai, and char siu bao — served in bamboo baskets with dipping sauce.'
 FROM categories WHERE category_name = 'Chinese';
 
--- ==========================================================
--- MEMBERS
--- ==========================================================
-CREATE TABLE members (
-    member_id  INT          PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(100),
-    last_name  VARCHAR(100),
-    email      VARCHAR(150) UNIQUE,
-    phone      VARCHAR(50),
-    points     INT          DEFAULT 0,
-    created_at DATETIME     DEFAULT CURRENT_TIMESTAMP
-);
 
--- ==========================================================
--- TEAM MEMBERS
--- ==========================================================
-CREATE TABLE team_members (
-    team_id    INT          PRIMARY KEY AUTO_INCREMENT,
-    name       VARCHAR(150),
-    student_id VARCHAR(20),
-    role       VARCHAR(100),
-    email      VARCHAR(150)
-);
+USE mhumsap_db;
 
-INSERT INTO team_members (name, student_id, role, email) VALUES
-('Miss Chalisa Pattanaprateep',  '', 'Developer', ''),
-('Mr. Voothichote Chammunkong', '', 'Developer', ''),
-('Miss Sarisa Vanichviroon',     '', 'Developer', ''),
-('Mr. Soonthana Ongsoi',        '', 'Developer', ''),
-('Mr. Nuttanun Muanraksa',      '', 'Developer', '');
+DELETE FROM administrators WHERE email = 'papayapk@mhumsap.com';
+
+INSERT INTO administrators (first_name, last_name, email) 
+VALUES ('papaya', 'pokpok', 'papayapk@mhumsap.com');
+
+INSERT INTO admin_login (admin_id, username, password_hash, role) 
+VALUES (
+    (SELECT admin_id FROM administrators WHERE email = 'papayapk@mhumsap.com'), 
+    'papaya', 
+    '1234', 
+    'admin'
+);
+DROP TABLE IF EXISTS login_logs;
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS team_members;
